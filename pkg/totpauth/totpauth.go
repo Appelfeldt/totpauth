@@ -18,7 +18,6 @@ func Auth(key string, timestart uint64, timestep uint64) string {
 
 func totp(key string, timestart uint64, timestep uint64) string {
 	counter := (uint64(time.Now().Unix()) - timestart) / timestep
-	// counter := uint64(float64(unixTime-t0) / float64(timeStep)) //prior method
 	return hotp(key, counter)
 }
 
