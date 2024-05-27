@@ -24,7 +24,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'totpauth-win-amd64.zip'
-        path: bin/win/
+        directory: bin/win/
 
         
     - name: Build linux-amd64
@@ -35,7 +35,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'totpauth-linux-amd64.zip'
-        path: bin/linux-amd64/
+        directory: bin/linux-amd64/
         
     - name: release
       uses: actions/create-release@v1
@@ -55,7 +55,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: totpauth-win-amd64.zip
+        asset_path: bin/win/totpauth-win-amd64.zip
         asset_name: totpauth-win-amd64.zip
         asset_content_type: application/zip
 
@@ -65,6 +65,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: totpauth-linux-amd64.zip
+        asset_path: bin/linux-amd64/totpauth-linux-amd64.zip
         asset_name: totpauth-linux-amd64.zip
         asset_content_type: application/zip
