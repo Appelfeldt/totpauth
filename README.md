@@ -2,7 +2,7 @@
 totpauth is a CLI tool that generates time-based one-time passwords using a keycode.
 
 ## Synopsis
-```totpauth [--timestart] [--timestep] <filepath>```
+```totpauth <filepath> [flags]```
 
 Example:  
 ```totpauth ./secret.key```  
