@@ -14,10 +14,10 @@ import (
 var BuildVersion string
 
 var rootCmd = &cobra.Command{
-	Use:     "totpauth",
+	Use:     "totpauth <filepath>",
 	Version: BuildVersion,
 	Short:   "totpauth - Generates time-based one-time passwords",
-	Long:    "totpauth is a CLI tool that generates time-based one-time passwords using a supplied key",
+	Long:    "totpauth is a CLI tool that generates time-based one-time passwords using a supplied keycode",
 	Args:    cobra.MaximumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var input string
